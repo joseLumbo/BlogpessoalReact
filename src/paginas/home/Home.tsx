@@ -1,10 +1,19 @@
-import React from 'react'
-import { Box, Button, Grid, Typography } from '@material-ui/core'
+import React from 'react';
+import { Box, Button, Grid, Typography } from '@material-ui/core';
 import TabPostagem from '../../components/postagens/tabpostagens/TabPostagem'
-import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem'
-import "./Home.css"
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+import "./Home.css";
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useNavigate } from 'react-router';
+import {Link}  from 'react-router-dom';
 
 function Home() {
+
+  let histoty = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state)=> state.tokens
+  );
   return (
     <>
       <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
@@ -20,13 +29,15 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Button variant="outlined" className='botao'>Ver Postagens</Button>
+            <Link to="/posts" className="text-decorator-none">
+              <Button variant="outlined" className='botao'>Ver Postagens</Button>
+            </Link>
           </Box>
 
         </Grid>
 
         <Grid item xs={6} >
-          <img src="" alt="" width="500px" height="500px" />
+          <img src="https://www.canstockphoto.com.br/feliz-computador-caricatura-desktop-19335638.html" alt="" width="500px" height="500px" />
         </Grid>
 
         <Grid xs={12} className='postagens'>

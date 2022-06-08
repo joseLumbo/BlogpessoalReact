@@ -80,4 +80,4 @@ function ListaTema() {
   )
 }
 
-export default ListaTema
+export default ListaTema;
