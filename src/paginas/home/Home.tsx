@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Button, Grid, Typography } from '@material-ui/core';
 import TabPostagem from '../../components/postagens/tabpostagens/TabPostagem'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
@@ -6,14 +6,34 @@ import "./Home.css";
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import { useNavigate } from 'react-router';
-import {Link}  from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Home() {
 
-  let histoty = useNavigate();
+  let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state)=> state.tokens
+    (state) => state.tokens
   );
+
+  useEffect(() => {
+    if (token == "") {
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+      navigate("/login")
+
+    }
+    
+  }, [token])
+
   return (
     <>
       <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
@@ -37,7 +57,7 @@ function Home() {
         </Grid>
 
         <Grid item xs={6} >
-          <img src="https://www.canstockphoto.com.br/feliz-computador-caricatura-desktop-19335638.html" alt="" width="500px" height="500px" />
+          <img src="https://i.imgur.com/Hpphapp.gif" alt="" width="500px" height="500px" />
         </Grid>
 
         <Grid xs={12} className='postagens'>

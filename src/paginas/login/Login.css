@@ -1,9 +1,14 @@
+.textos1:hover{
+    color: black;
+}
+
 .textos1{
     font-weight: bold !important;
+    
  }
  
  .imagem{
-     background-image: url(https://as1.ftcdn.net/v2/jpg/00/90/53/96/1000_F_90539628_1MbfMTOCMPVXYqtnUVq5yzmZDll1K3xB.jpg);
+     background-image: url(https://i.imgur.com/1iOm0sz.gif);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -14,3 +19,7 @@
  .text-decorator-none{
      text-decoration: none;
  }
+ body{
+     background-color: whitesmoke;
+ }
+ 
