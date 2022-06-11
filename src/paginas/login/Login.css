@@ -8,7 +8,7 @@
  }
  
  .imagem{
-     background-image: url(https://i.imgur.com/1iOm0sz.gif);
+     background-image: url(https://i.imgur.com/BNegKAg_d.webp?maxwidth=520&shape=thumb&fidelity=high);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -20,6 +20,10 @@
      text-decoration: none;
  }
  body{
-     background-color: whitesmoke;
+     background-image: url();
+ }
+ .caixalogin{ 
+     border-color: gray !important;
+      
  }
  
